@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+  <!-- TVRI Logo Circle -->
+  <circle cx="500" cy="450" r="350" fill="#1a3a7a"/>
+  
+  <!-- TVRI Text -->
+  <path d="M180 250 H380 V300 H310 V550 H250 V300 H180 Z" fill="white"/>
+  <path d="M400 250 L500 550 H560 L660 250 H600 L530 470 L460 250 Z" fill="white"/>
+  <path d="M680 250 H740 V500 H850 V550 H680 Z" fill="white"/>
+  <path d="M860 250 H920 V550 H860 Z" fill="white"/>
+  
+  <!-- KALIMANTAN TENGAH Text -->
+  <text x="500" y="750" font-family="Arial, sans-serif" font-size="80" font-weight="bold" text-anchor="middle" fill="#666666">KALIMANTAN TENGAH</text>
+</svg>

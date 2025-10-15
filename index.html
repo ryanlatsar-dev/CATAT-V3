@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CATAT - Cerdas Administrasi Toolset Alat Transmisi</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-background">
+                <div class="hero-content">
+                    <div class="logo-container">
+                        <img src="img/TVRI-Kalimantan-Tengah-2023.svg" alt="TVRI Kalimantan Tengah Logo" class="hero-logo">
+                    </div>
+                    <div class="hero-text">
+                        <h1 class="hero-title">CATAT</h1>
+                        <p class="hero-subtitle">Cerdas Administrasi Toolset Alat Transmisi</p>
+                        <p class="hero-station">TVRI Stasiun Kalimantan Tengah</p>
+                        
+                        <div class="hero-description">
+                            <p class="description-text">
+                                <i class="fas fa-tools description-icon"></i>
+                                Sistem manajemen peminjaman alat transmisi yang memudahkan pencatatan, 
+                                pelacakan, dan pengembalian peralatan teknis secara digital dan efisien.
+                            </p>
+                            <div class="features-highlight">
+                                <span class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    Pencatatan Digital
+                                </span>
+                                <span class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    Pelacakan Real-time
+                                </span>
+                                <span class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    Laporan Otomatis
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <main>
+            <section class="service-selection">
+                <div class="section-header">
+                    <h2>Pilih Layanan</h2>
+                    <p class="section-description">Silakan pilih layanan yang Anda butuhkan untuk mengelola alat transmisi</p>
+                </div>
+                <div class="button-container">
+                    <button id="borrowButton" class="service-button">
+                        <div class="button-icon">
+                            <i class="fas fa-hand-holding"></i>
+                        </div>
+                        <div class="button-content">
+                            <h3>Peminjaman Barang</h3>
+                            <p>Daftarkan peminjaman alat transmisi</p>
+                        </div>
+                    </button>
+                    <button id="returnButton" class="service-button">
+                        <div class="button-icon">
+                            <i class="fas fa-undo-alt"></i>
+                        </div>
+                        <div class="button-content">
+                            <h3>Pengembalian Barang</h3>
+                            <p>Proses pengembalian alat yang dipinjam</p>
+                        </div>
+                    </button>
+                </div>
+            </section>
+
+            <section id="borrowingForm" class="form-section hidden">
+                <h2>Form Peminjaman Barang</h2>
+                <form id="borrowForm">
+                    <div class="form-group">
+                        <label for="fullName">Nama Lengkap *</label>
+                        <input type="text" id="fullName" name="fullName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="unit">Unit/Bagian *</label>
+                        <input type="text" id="unit" name="unit" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact">Kontak Informasi (No.Telp)</label>
+                        <input type="text" id="contact" name="contact">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="borrowDate">Tanggal & Waktu Peminjaman (Otomatis) *</label>
+                        <input type="text" id="borrowDate" name="borrowDate" readonly>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Barang Yang Dipinjam *</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="item1" name="items" value="Set Kunci Pas">
+                                <label for="item1">Kunci Pas Set</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="item2" name="items" value="Kunci L">
+                                <label for="item2">Kunci L</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="item3" name="items" value="Obeng Set">
+                                <label for="item3">Obeng Set</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="item4" name="items" value="Tang Kombinasi">
+                                <label for="item4">Tang Kombinasi</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="item5" name="items" value="Kunci Inggris">
+                                <label for="item5">Kunci Inggris</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="item6" name="items" value="Kunci Sok">
+                                <label for="item6">Kunci Sok</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="item7" name="items" value="Palu">
+                                <label for="item7">Palu</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="item8" name="items" value="Tangga">
+                                <label for="item8">Tangga</label>
+                            </div>
+                            <div class="checkbox-item other-item">
+                                <input type="checkbox" id="otherItem" name="items" value="other">
+                                <label for="otherItem">Lainnya:</label>
+                                <input type="text" id="otherItemText" name="otherItemText" class="other-input">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Kondisi Barang Saat Dipinjam *</label>
+                        <div class="radio-group">
+                            <div class="radio-item">
+                                <input type="radio" id="conditionGood" name="condition" value="Baik" required>
+                                <label for="conditionGood">Baik</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="conditionNormal" name="condition" value="Normal">
+                                <label for="conditionNormal">Normal</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="conditionSlightlyDamaged" name="condition" value="Rusak Ringan">
+                                <label for="conditionSlightlyDamaged">Rusak Ringan</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="purpose">Tujuan Peminjaman *</label>
+                        <textarea id="purpose" name="purpose" required></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="submit-button" id="submitBorrow">
+                            <span class="button-text">Kirim</span>
+                            <span class="loading-spinner hidden">
+                                <svg viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-dasharray="31.416" stroke-dashoffset="31.416">
+                                        <animate attributeName="stroke-dasharray" dur="2s" values="0 31.416;15.708 15.708;0 31.416" repeatCount="indefinite"/>
+                                        <animate attributeName="stroke-dashoffset" dur="2s" values="0;-15.708;-31.416" repeatCount="indefinite"/>
+                                    </circle>
+                                </svg>
+                            </span>
+                        </button>
+                        <button type="button" class="cancel-button" id="cancelBorrow">Batal</button>
+                    </div>
+                </form>
+            </section>
+
+            <section id="returnForm" class="form-section hidden">
+                <h2>Form Pengembalian Barang</h2>
+                <form id="returnFormElement">
+                    <div class="form-group">
+                        <label for="borrowerSelect">Pilih Nama Peminjam *</label>
+                        <select id="borrowerSelect" name="borrowerSelect" required>
+                            <option value="">-- Pilih Peminjam --</option>
+                        </select>
+                    </div>
+
+                    <div id="borrowInfo" class="info-section hidden">
+                        <h3>Informasi Peminjaman</h3>
+                        <div class="info-group">
+                            <p><strong>Nama:</strong> <span id="infoName"></span></p>
+                            <p><strong>Unit/Bagian:</strong> <span id="infoUnit"></span></p>
+                            <p><strong>Kontak:</strong> <span id="infoContact"></span></p>
+                            <p><strong>Tanggal Peminjaman:</strong> <span id="infoBorrowDate"></span></p>
+                            <p><strong>Tujuan Peminjaman:</strong> <span id="infoPurpose"></span></p>
+                            <p><strong>Kondisi Saat Dipinjam:</strong> <span id="infoCondition"></span></p>
+                            <p><strong>Barang yang Dipinjam:</strong> <span id="infoItems"></span></p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Kondisi Barang Saat Dikembalikan *</label>
+                        <div class="radio-group">
+                            <div class="radio-item">
+                                <input type="radio" id="returnConditionGood" name="returnCondition" value="Baik (Tidak ada kerusakan)" required>
+                                <label for="returnConditionGood">Baik (Tidak ada kerusakan)</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="returnConditionNormal" name="returnCondition" value="Normal (Sedikit aus tapi masih berfungsi)">
+                                <label for="returnConditionNormal">Normal (Sedikit aus tapi masih berfungsi)</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="returnConditionSlightlyDamaged" name="returnCondition" value="Rusak Ringan (Ada kerusakan kecil)">
+                                <label for="returnConditionSlightlyDamaged">Rusak Ringan (Ada kerusakan kecil)</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="returnConditionSeverelyDamaged" name="returnCondition" value="Rusak Berat (Tidak dapat digunakan)">
+                                <label for="returnConditionSeverelyDamaged">Rusak Berat (Tidak dapat digunakan)</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="returnConditionLost" name="returnCondition" value="Hilang/Tidak Dikembalikan">
+                                <label for="returnConditionLost">Hilang/Tidak Dikembalikan</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="notes">Catatan Tambahan</label>
+                        <textarea id="notes" name="notes"></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="submit-button" id="submitReturn">
+                            <span class="button-text">Kirim</span>
+                            <span class="loading-spinner hidden">
+                                <svg viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-dasharray="31.416" stroke-dashoffset="31.416">
+                                        <animate attributeName="stroke-dasharray" dur="2s" values="0 31.416;15.708 15.708;0 31.416" repeatCount="indefinite"/>
+                                        <animate attributeName="stroke-dashoffset" dur="2s" values="0;-15.708;-31.416" repeatCount="indefinite"/>
+                                    </circle>
+                                </svg>
+                            </span>
+                        </button>
+                        <button type="button" class="cancel-button" id="cancelReturn">Batal</button>
+                    </div>
+                </form>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 TVRI Stasiun Kalimantan Tengah. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- Success Popup with Checkmark Animation -->
+    <div id="successPopup" class="success-popup hidden">
+        <div class="popup-content">
+            <div class="checkmark-container">
+                <svg class="checkmark" viewBox="0 0 52 52">
+                    <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
+                    <path class="checkmark-check" fill="none" d="m14.1 27.2l7.1 7.2 16.7-16.8"/>
+                </svg>
+            </div>
+            <h3 id="successTitle">Berhasil!</h3>
+            <p id="successMessage"></p>
+        </div>
+    </div>
+
+    <!-- Error Notification (keep existing style for errors) -->
+    <div id="notification" class="notification hidden">
+        <p id="notificationMessage"></p>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
