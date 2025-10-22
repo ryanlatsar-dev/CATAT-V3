@@ -420,3 +420,96 @@ async function submitReturnForm() {
         setButtonLoading('submitReturn', false);
     }
 }
+
+// PDF Modal Functionality
+function initializePDFModal() {
+    const guideButton = document.getElementById('guideButton');
+    const pdfModal = document.getElementById('pdfModal');
+    const pdfModalClose = document.getElementById('pdfModalClose');
+    const pdfModalOverlay = document.getElementById('pdfModalOverlay');
+    const pdfViewer = document.getElementById('pdfViewer');
+    const pdfLoading = document.getElementById('pdfLoading');
+
+    // PDF file path - you need to place the PDF file in the docs folder
+    const pdfPath = 'docs/panduan-pengisian.pdf';
+
+    // Open modal when guide button is clicked
+    guideButton.addEventListener('click', function() {
+        openPDFModal();
+    });
+
+    // Close modal when close button is clicked
+    pdfModalClose.addEventListener('click', function() {
+        closePDFModal();
+    });
+
+    // Close modal when overlay is clicked
+    pdfModalOverlay.addEventListener('click', function() {
+        closePDFModal();
+    });
+
+    // Close modal when Escape key is pressed
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && !pdfModal.classList.contains('hidden')) {
+            closePDFModal();
+        }
+    });
+
+    function openPDFModal() {
+        // Show modal
+        pdfModal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        
+        // Show loading state
+        pdfLoading.classList.remove('hidden');
+        
+        // Load PDF
+        pdfViewer.src = pdfPath;
+        
+        // Hide loading when PDF is loaded
+        pdfViewer.onload = function() {
+            setTimeout(() => {
+                pdfLoading.classList.add('hidden');
+            }, 500); // Small delay for better UX
+        };
+
+        // Handle PDF load error
+        pdfViewer.onerror = function() {
+            pdfLoading.innerHTML = `
+                <div class="loading-spinner-pdf">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <p>Panduan tidak dapat dimuat</p>
+                <p style="font-size: 0.9rem; margin-top: 10px;">
+                    Silakan download file panduan dari 
+                    <a href="https://drive.google.com/file/d/1So8z1qhSa2QSWMNsYoqFmjWmLtoT8Rv9/view?usp=drive_link" 
+                       target="_blank" style="color: var(--secondary-color);">
+                       Google Drive
+                    </a>
+                </p>
+            `;
+        };
+    }
+
+    function closePDFModal() {
+        pdfModal.classList.add('hidden');
+        document.body.style.overflow = ''; // Restore scrolling
+        
+        // Clear PDF source to stop loading
+        pdfViewer.src = '';
+        
+        // Reset loading state
+        pdfLoading.classList.remove('hidden');
+        pdfLoading.innerHTML = `
+            <div class="loading-spinner-pdf">
+                <i class="fas fa-spinner fa-spin"></i>
+            </div>
+            <p>Memuat panduan...</p>
+        `;
+    }
+}
+
+// Initialize PDF modal when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    initializePDFModal();
+});

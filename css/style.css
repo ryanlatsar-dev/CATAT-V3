@@ -700,3 +700,191 @@ footer {
 .form-section {
     animation: fadeIn 0.5s ease-out;
 }
+
+/* Guide Button Styles */
+.guide-button-container {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.guide-button {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: var(--white);
+    padding: 12px 24px;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.guide-button:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.guide-button:active {
+    transform: translateY(0);
+}
+
+.guide-button i {
+    font-size: 1.1rem;
+}
+
+/* PDF Modal Styles */
+.pdf-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.pdf-modal:not(.hidden) {
+    opacity: 1;
+    visibility: visible;
+}
+
+.pdf-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+}
+
+.pdf-modal-content {
+    position: relative;
+    width: 90%;
+    height: 85%;
+    max-width: 1000px;
+    background: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-xl);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.pdf-modal:not(.hidden) .pdf-modal-content {
+    transform: scale(1);
+}
+
+.pdf-modal-header {
+    padding: 20px 25px;
+    background: var(--primary-gradient);
+    color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+.pdf-modal-header h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.pdf-modal-close {
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.pdf-modal-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(90deg);
+}
+
+.pdf-modal-body {
+    flex: 1;
+    position: relative;
+    background: #f8f9fa;
+}
+
+.pdf-modal-body iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.pdf-loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--white);
+    color: var(--text-light);
+}
+
+.pdf-loading.hidden {
+    display: none;
+}
+
+.loading-spinner-pdf {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: var(--secondary-color);
+}
+
+.pdf-loading p {
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* Responsive PDF Modal */
+@media (max-width: 768px) {
+    .pdf-modal-content {
+        width: 95%;
+        height: 90%;
+    }
+    
+    .pdf-modal-header {
+        padding: 15px 20px;
+    }
+    
+    .pdf-modal-header h3 {
+        font-size: 1.1rem;
+    }
+    
+    .guide-button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
