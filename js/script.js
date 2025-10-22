@@ -509,7 +509,42 @@ function initializePDFModal() {
     }
 }
 
-// Initialize PDF modal when DOM is loaded
+// Theme handling
+function initializeTheme() {
+    const saved = localStorage.getItem('theme');
+    const theme = saved === 'dark' ? 'dark' : 'light'; // default light
+    applyTheme(theme);
+}
+
+function applyTheme(theme) {
+    const body = document.body;
+    body.setAttribute('data-theme', theme);
+    const icon = document.getElementById('themeToggleIcon');
+    if (icon) {
+        if (theme === 'dark') {
+            icon.classList.remove('fa-sun');
+            icon.classList.add('fa-moon');
+        } else {
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+        }
+    }
+}
+
+function setupThemeToggle() {
+    const btn = document.getElementById('themeToggle');
+    if (!btn) return;
+    btn.addEventListener('click', function() {
+        const current = document.body.getAttribute('data-theme') || 'light';
+        const next = current === 'light' ? 'dark' : 'light';
+        applyTheme(next);
+        localStorage.setItem('theme', next);
+    });
+}
+
+// Initialize PDF modal and theme when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     initializePDFModal();
+    initializeTheme();
+    setupThemeToggle();
 });

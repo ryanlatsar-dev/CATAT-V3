@@ -888,3 +888,79 @@ footer {
         font-size: 0.9rem;
     }
 }
+
+/* Theme Toggle Button */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.85);
+  color: #333;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+  z-index: 1100;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 1);
+}
+
+.theme-toggle i {
+  font-size: 1.2rem;
+}
+
+/* Dark Theme Variables and Overrides */
+body[data-theme="dark"] {
+  --primary-color: #f4f4f4;
+  --primary-gradient: linear-gradient(135deg, #0f1226 0%, #1b1f38 100%);
+  --secondary-color: #4aa3ff;
+  --accent-color: #3bd47e;
+  --text-color: #e8e8e8;
+  --text-light: #b9c0cb;
+  --light-gray: #1c2130;
+  --medium-gray: #2a3142;
+  --dark-gray: #8c99a8;
+  --white: #fdfdfd;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.45);
+  --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.5);
+  --hero-gradient: linear-gradient(135deg, #1b1f38 0%, #2a314e 100%);
+  --card-gradient: linear-gradient(145deg, #232838 0%, #15171e 100%);
+}
+
+/* Background override for body in dark mode */
+body[data-theme="dark"] {
+  background: linear-gradient(135deg, #0d0f1a 0%, #1b1f38 100%);
+}
+
+/* Adjust text color in hero section for dark mode */
+body[data-theme="dark"] .hero-content {
+  color: var(--text-color);
+}
+
+/* Buttons contrast tweaks in dark mode */
+body[data-theme="dark"] .service-button {
+  background: var(--card-gradient);
+  color: var(--text-color);
+}
+
+body[data-theme="dark"] .submit-button,
+body[data-theme="dark"] .cancel-button {
+  box-shadow: var(--shadow);
+}
+
+/* Theme toggle appearance in dark mode */
+body[data-theme="dark"] .theme-toggle {
+  background: rgba(31, 36, 48, 0.9);
+  color: #e8e8e8;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
