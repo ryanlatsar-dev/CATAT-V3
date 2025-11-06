@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradient untuk efek modern -->
+    <linearGradient id="catatGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e40af;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Gradient untuk versi dark mode -->
+    <linearGradient id="catatGradientDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#60a5fa;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Ikon alat/teknologi di kiri -->
+  <g class="logo-icon">
+    <!-- Lingkaran latar belakang ikon -->
+    <circle cx="30" cy="30" r="20" fill="url(#catatGradient)" opacity="0.1"/>
+    
+    <!-- Wrench (kunci) yang juga membentuk huruf C -->
+    <path d="M18 25 Q18 20 23 20 L28 20 Q30 20 30 22 L30 28 Q30 30 28 30 L23 30 Q18 30 18 25 Z" 
+          fill="url(#catatGradient)" stroke="#1e40af" stroke-width="1"/>
+    
+    <!-- Handle wrench -->
+    <rect x="28" y="27" width="8" height="6" rx="1" fill="url(#catatGradient)"/>
+    
+    <!-- Elemen pencatatan (checklist) -->
+    <rect x="35" y="18" width="3" height="3" rx="0.5" fill="#1e40af"/>
+    <rect x="35" y="23" width="3" height="3" rx="0.5" fill="#1e40af"/>
+    <rect x="35" y="28" width="3" height="3" rx="0.5" fill="#1e40af"/>
+    
+    <!-- Checkmark -->
+    <path d="M38 20 L40 22 L43 19" stroke="#2563eb" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Teks CATAT -->
+  <g class="logo-text">
+    <text x="50" y="25" font-family="'Poppins', sans-serif" font-size="18" font-weight="700" 
+          fill="url(#catatGradient)" letter-spacing="1">
+      CATAT
+    </text>
+    
+    <!-- Subtitle/tagline -->
+    <text x="50" y="40" font-family="'Poppins', sans-serif" font-size="8" font-weight="400" 
+          fill="#6b7280" letter-spacing="0.5">
+      Cerdas Administrasi Toolset Alat Transmisi
+    </text>
+  </g>
+  
+  <!-- Versi dark mode (akan diaktifkan via CSS) -->
+  <g class="logo-dark" style="display:none">
+    <circle cx="30" cy="30" r="20" fill="url(#catatGradientDark)" opacity="0.1"/>
+    <path d="M18 25 Q18 20 23 20 L28 20 Q30 20 30 22 L30 28 Q30 30 28 30 L23 30 Q18 30 18 25 Z" 
+          fill="url(#catatGradientDark)" stroke="#60a5fa" stroke-width="1"/>
+    <rect x="28" y="27" width="8" height="6" rx="1" fill="url(#catatGradientDark)"/>
+    <rect x="35" y="18" width="3" height="3" rx="0.5" fill="#60a5fa"/>
+    <rect x="35" y="23" width="3" height="3" rx="0.5" fill="#60a5fa"/>
+    <rect x="35" y="28" width="3" height="3" rx="0.5" fill="#60a5fa"/>
+    <path d="M38 20 L40 22 L43 19" stroke="#3b82f6" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    
+    <text x="50" y="25" font-family="'Poppins', sans-serif" font-size="18" font-weight="700" 
+          fill="url(#catatGradientDark)" letter-spacing="1">
+      CATAT
+    </text>
+    
+    <text x="50" y="40" font-family="'Poppins', sans-serif" font-size="8" font-weight="400" 
+          fill="#9ca3af" letter-spacing="0.5">
+      Cerdas Administrasi Toolset Alat Transmisi
+    </text>
+  </g>
+</svg>

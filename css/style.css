@@ -3,7 +3,7 @@
     --primary-gradient: linear-gradient(135deg, #1b1c34 0%, #2c3e50 100%);
     --secondary-color: #3498db;
     --accent-color: #2ecc71;
-    --text-color: #333;
+    --text-color: #ffffff;
     --text-light: #666;
     --light-gray: #f5f5f5;
     --medium-gray: #e0e0e0;
@@ -14,7 +14,7 @@
     --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.1);
     --transition: all 0.3s ease;
     --border-radius: 12px;
-    --hero-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --hero-gradient: linear-gradient(135deg, #667eeb 0%, #764ba2 100%);
     --card-gradient: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
 }
 
@@ -30,6 +30,35 @@ body {
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     line-height: 1.6;
     min-height: 100vh;
+    padding-top: 70px; /* Space for fixed header */
+}
+
+/* Site Header Styles */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow);
+    z-index: 1000;
+    transition: var(--transition);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-logo-img {
+    height: 40px;
+    width: auto;
+    transition: var(--transition);
 }
 
 .container {
@@ -86,6 +115,30 @@ body {
 
 .hero-text {
     max-width: 800px;
+}
+
+/* Hero Brand - Logo and Title Group */
+.hero-brand {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.hero-logo {
+    height: 120px;
+    width: auto;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+    transition: transform 0.3s ease;
+}
+
+.hero-logo:hover {
+    transform: scale(1.05);
+}
+
+.hero-title-group {
+    text-align: left;
 }
 
 .hero-title {
@@ -963,4 +1016,56 @@ body[data-theme="dark"] .theme-toggle {
   background: rgba(31, 36, 48, 0.9);
   color: #e8e8e8;
   border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Dark Mode for Hero Logo */
+body[data-theme="dark"] .hero-logo {
+  filter: drop-shadow(0 4px 8px rgba(255, 255, 255, 0.1)) brightness(1.1);
+}
+
+body[data-theme="dark"] .hero-logo:hover {
+  filter: drop-shadow(0 6px 12px rgba(255, 255, 255, 0.2)) brightness(1.2);
+}
+
+/* Header dark mode styling */
+body[data-theme="dark"] .site-header {
+  background: rgba(26, 29, 33, 0.95);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body[data-theme="dark"] .header-logo-text {
+  background: linear-gradient(135deg, #3b82f6, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Responsive adjustments for hero brand */
+@media (max-width: 768px) {
+    .hero-brand {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .hero-logo {
+        height: 100px;
+    }
+    
+    .hero-title-group {
+        text-align: center;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-logo {
+        height: 80px;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
 }
