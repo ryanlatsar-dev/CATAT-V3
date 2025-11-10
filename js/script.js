@@ -23,16 +23,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const otherItem = document.getElementById('otherItem');
     const otherItemText = document.getElementById('otherItemText');
     
-    // Set current date and time
-    const borrowDate = document.getElementById('borrowDate');
-    const now = new Date();
-    borrowDate.value = formatDateTime(now);
+
     
     // Event Listeners
     borrowButton.addEventListener('click', () => {
         borrowingForm.classList.remove('hidden');
         returnForm.classList.add('hidden');
         document.querySelector('.service-selection').classList.add('hidden');
+        
+        // Set current date and time every time the form is opened
+        const borrowDate = document.getElementById('borrowDate');
+        const now = new Date();
+        borrowDate.value = formatDateTime(now);
     });
     
     returnButton.addEventListener('click', () => {
